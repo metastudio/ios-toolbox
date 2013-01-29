@@ -1,0 +1,4 @@
+- @categories.each do |category|
+  .category{id: dom_id(category)}
+    %h2= category.name
+    = render category.projects
