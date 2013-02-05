@@ -8,16 +8,28 @@ Feature: Dashboard
       | Graphics        |
       | Social Networks |
       | Data Formats    |
-    And I have projects:
+
+  Scenario: View a list of available projects
+    Given I have projects:
       | Name            | Category   |
       | ASIHTTPRequest  | Networking |
       | RestKit         | Networking |
       | Cocos2d         | Graphics   |
-
-  Scenario: View a list of available projects
     When I go to the dashboard page
     Then I should see next "Networking" projects:
       | ASIHTTPRequest |
       | RestKit        |
     And I should see next "Graphics" projects:
       | Cocos2d |
+
+  Scenario: More popular projects shown first
+    Given I have projects:
+      | Name            | Category   | Rating |
+      | ASIHTTPRequest  | Networking | 10     |
+      | RestKit         | Networking | 5      |
+      | AFNetworking    | Networking | 50     |
+    When I go to the dashboard page
+    Then I should see next "Networking" projects in given order:
+      | AFNetworking   |
+      | ASIHTTPRequest |
+      | RestKit        |

@@ -6,6 +6,7 @@ FactoryGirl.define do
 
   factory :project do
     name "Example project"
+    url "http://whatever.com"
     category
   end
   

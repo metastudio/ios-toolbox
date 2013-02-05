@@ -5,4 +5,6 @@ class Project < ActiveRecord::Base
 
   validates :category_id, presence: true
   validates :name, presence: true
+
+  scope :by_rating, order('rating desc')
 end
