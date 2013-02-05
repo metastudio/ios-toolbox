@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130129114628) do
+ActiveRecord::Schema.define(:version => 20130205103836) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",       :null => false
@@ -21,11 +21,21 @@ ActiveRecord::Schema.define(:version => 20130129114628) do
 
   add_index "categories", ["name"], :name => "index_categories_on_name", :unique => true
 
+  create_table "invites", :force => true do |t|
+    t.integer  "vk_user_id",   :null => false
+    t.integer  "vk_friend_id", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "invites", ["vk_user_id", "vk_friend_id"], :name => "index_invites_on_vk_user_id_and_vk_friend_id", :unique => true
+
   create_table "projects", :force => true do |t|
     t.integer  "category_id", :null => false
     t.string   "name",        :null => false
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "url",         :null => false
   end
 
   add_index "projects", ["category_id"], :name => "index_projects_on_category_id"
