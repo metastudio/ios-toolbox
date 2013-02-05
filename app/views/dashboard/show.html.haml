@@ -1,4 +1,4 @@
 - @categories.each do |category|
   .category{id: dom_id(category)}
     %h2= category.name
-    %ul= render category.projects.by_rating
+    %ul= render category.projects.published.by_rating

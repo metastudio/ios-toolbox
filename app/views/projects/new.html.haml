@@ -1,0 +1,12 @@
+= form_for @project, method: :post do |f|
+  
+  = f.label :category_id
+  = f.select :category_id, @categories_for_select
+
+  = f.label :name
+  = f.text_field :name
+
+  = f.label :url
+  = f.text_field :url
+
+  = f.submit

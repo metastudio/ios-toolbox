@@ -6,4 +6,8 @@ class Category < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
 
   scope :by_name, order('name ASC')
+
+  def self.options_hash
+    all.collect {|c| [c.name, c.id]}
+  end
 end
