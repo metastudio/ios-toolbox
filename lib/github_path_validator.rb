@@ -1,6 +1,6 @@
 class GithubPathValidator < ActiveModel::EachValidator
   def github_path_regexp
-    /\A\/[^\s\/]+\/[^\s\/]+\z/.freeze
+    /\A[^\s\/]+\/[^\s\/]+\z/.freeze
   end
 
   def validate_each(record, attribute, value)

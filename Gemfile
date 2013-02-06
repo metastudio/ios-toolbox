@@ -4,6 +4,8 @@ gem 'rails', '3.2.11'
 
 gem 'pg'
 
+gem 'github_api'
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -19,6 +21,8 @@ group :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'factory_girl_rails'
+  gem 'webmock'
+  gem 'vcr'
 end
 
 group :test, :development do

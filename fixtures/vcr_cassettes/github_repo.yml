@@ -1,0 +1,101 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/repos/rails/rails
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3.full+json,application/vnd.github.beta.full+json;q=0.7,application/vnd.github+json;q=0.5,application/json;q=0.1
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - Github Ruby Gem 0.8.10
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: !binary |-
+        T0s=
+    headers:
+      !binary "U2VydmVy":
+      - !binary |-
+        R2l0SHViLmNvbQ==
+      !binary "RGF0ZQ==":
+      - !binary |-
+        V2VkLCAwNiBGZWIgMjAxMyAxMjozODoxNSBHTVQ=
+      !binary "Q29udGVudC1UeXBl":
+      - !binary |-
+        YXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA==
+      !binary "VHJhbnNmZXItRW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+      !binary "Q29ubmVjdGlvbg==":
+      - !binary |-
+        a2VlcC1hbGl2ZQ==
+      !binary "U3RhdHVz":
+      - !binary |-
+        MjAwIE9L
+      !binary "WC1SYXRlbGltaXQtTGltaXQ=":
+      - !binary |-
+        NjA=
+      !binary "WC1SYXRlbGltaXQtUmVtYWluaW5n":
+      - !binary |-
+        NDk=
+      !binary "VmFyeQ==":
+      - !binary |-
+        QWNjZXB0
+      !binary "Q2FjaGUtQ29udHJvbA==":
+      - !binary |-
+        cHVibGljLCBtYXgtYWdlPTYwLCBzLW1heGFnZT02MA==
+      !binary "TGFzdC1Nb2RpZmllZA==":
+      - !binary |-
+        V2VkLCAwNiBGZWIgMjAxMyAxMToxODoyMiBHTVQ=
+      !binary "RXRhZw==":
+      - !binary |-
+        IjEwNjMxY2JmOGEwMDcyNjJjYjJiNThkOTE4NjY3OGRkIg==
+      !binary "WC1HaXRodWItTWVkaWEtVHlwZQ==":
+      - !binary |-
+        Z2l0aHViLnYzOyBwYXJhbT1mdWxsOyBmb3JtYXQ9anNvbg==
+      !binary "WC1Db250ZW50LVR5cGUtT3B0aW9ucw==":
+      - !binary |-
+        bm9zbmlmZg==
+      !binary "Q29udGVudC1FbmNvZGluZw==":
+      - !binary |-
+        Z3ppcA==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA+1YTY+jOBD9KyOkPW2CgdA9BGk1e9rrSqM57SUyYMBqsJFt
+        EnWj/Pct23wl6e20c9lLX7oJ1Ht+LpddVR48Wnhp8hTGG4/hlnipJzBtpLfx
+        yr5pDut3aPrCT4wILx28hleUrSCaK46i3cbDR6ywOPSigc+1Up1MEZIk7wXx
+        K2G/+jlvkX1Eu6Dc7XGwJ9FuR5Ld874oivK5JFmckWAXJD+KPyYWHMWJT3z8
+        gltMfUYUwlISJf2KqrrPNOtv0V+0xRWR8DCNtn7eclFt4yjwO1bBTCeTg9bv
+        3ZMCgMtp4Y6uxka9JELOvip50/ATvLnyxX+D0AzRi2DglFWucIDomVGpHEY2
+        5gPS/8AXZyCQsIqCFJ8ffQQMyATJeUCCdNww9ZnMBe0U5cxB0gUMaGDlMKNv
+        2JEGYDqmtRiHwY05wMiRMBc/WvsBdYIecf6qpy9ITugRPOnKdQUEKvXa6X36
+        98oT3nnjmcEUfClxI8kGdl3bXK3bskNsfM5RWpB5bYD5Z5+9fuPs28/pJODi
+        Zab9MPaNw664S0Df8fkNDPYAgGCuL+TVGasxA4K/YwznsIdwxgVW/N42vBVy
+        AR7Q+qdeVkVw6yzQgABcc+7uGQMCMJWyJ5+KpttJGaxEU5iyvs1gr34y0G/p
+        LA/A4SCmFSPE2SMzcDDHp5aSCczy2p1qwg3IPplVwpWzJI0ZEPw1YhqeOTPA
+        bkMGOCBZY00Dbw6PaNFMVs+KSJDyIUkaNytS4oHVMnI0cKaBU1/BwjnrmXBo
+        GCfWYFb1OnN/nHFuY3AGgpt1Dqrw292ke8uyIIEm50wJmvWPHRsLViuyyQ92
+        mfPEVtCFyGRRVxetU6mZXtvSe1nt1kUj7CKmH6TScXRNp3/fT7bvy9K4AS2n
+        mT0iR0ZXb41n5KQHDQuvDozHNFocGn7vsKr1iQD0HRbEVdwIQ0OGJTn7vj/U
+        BJuCrSXigd1jUQDHIq+hTHHVM0w4yNstVqbsK7WcAsrAhuPCOexnIJDYpXDV
+        ZFHreOigo3EWYkBrlpY2RCrO3M+oBbnmY1zRkuafqWhvw/4CPPyQlOVkg5tm
+        A1GlaE4hzqAT0CsBJRBxn71FgVzoDU28CgI1ZnHACurEKAiSbRBvw/BXEKXh
+        Po2//wM2fVesbcLdNoi2wfOvMEzDJI0ibdP1sl5oZpMgScM43T1pE50sbbEJ
+        T9A9vl+86s4LjKWsF+M/F9PU9Ky2Ih1N8wbW7iqYPuY+Xh+175uDjJq3pIP0
+        NTa9oFpALc2ZUeFDE6Kl0jf4vt/FQbDxTlhBkQNZIec9A5+G3+PgSS+WTYNj
+        Ma6ZsTzYiPZSJXpd38ObZZesXp7oC53LdVt9j+xxkkBv3lIh+NibM4huaKo6
+        wkb2SUgcJrr71FV4amErI3ilP0/iZ9nQjJ8AMnOY4QpS4r5RB1uOwYxaLBXc
+        H1z2cl/XCfP9xtd1wnyBgr6uE+D0+h+uE87/ArpYK5IZFAAA
+    http_version: 
+  recorded_at: Wed, 06 Feb 2013 12:38:15 GMT
+recorded_with: VCR 2.4.0

@@ -10,4 +10,15 @@ class Project < ActiveRecord::Base
   scope :by_rating, order('rating desc')
   scope :in_review, where('is_reviewed = ?', false)
   scope :published, where('is_reviewed = ?', true)
+
+  def update_rating
+    self.rating = rating_provider.fetch
+    save!
+  end
+
+  private
+
+  def rating_provider
+    @rating_provider ||= Rating::Github.new self
+  end
 end
