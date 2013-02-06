@@ -12,6 +12,9 @@ describe Project do
   it { should_not allow_mass_assignment_of(:rating) }
   it { should_not allow_mass_assignment_of(:is_reviewed) }
 
+  it { should     allow_value('/AndreyChernyh/rails').for(:github_path) }
+  it { should_not allow_value('http://whatever.com/Andrey/rails').for(:github_path) }
+
   describe '.by_rating' do
     let(:rating10) { create :project, rating: 10 }
     let(:rating5)  { create :project, rating: 5  }
