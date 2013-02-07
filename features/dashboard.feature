@@ -33,3 +33,13 @@ Feature: Dashboard
       | AFNetworking   |
       | ASIHTTPRequest |
       | RestKit        |
+
+  Scenario: Project information is displayed
+    Given I have projects:
+      | Name            | Description  | Category   | URL                                    | Github Path            |
+      | ASIHTTPRequest  | Nice project | Networking | http://allseeing-i.com/ASIHTTPRequest/ | pokeb/asi-http-request |
+    When I go to the dashboard page
+    Then I should see "ASIHTTPRequest"
+    And I should see "Nice project"
+    And I should see "http://allseeing-i.com/ASIHTTPRequest/"
+    And I should see "https://github.com/pokeb/asi-http-request"

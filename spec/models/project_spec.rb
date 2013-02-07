@@ -44,4 +44,19 @@ describe Project do
     it { should_not include unpublished }
     it { should     include published   }
   end
+
+  describe '.github_url' do
+    let(:project) { stub_model Project, github_path: github_path }
+    subject { project.github_url }
+
+    context 'with github_path' do
+      let(:github_path) { 'rails/rails' }
+      it { should == 'https://github.com/rails/rails'}
+    end
+
+    context 'without github_path' do
+      let(:github_path) { nil }
+      it { should be_nil }
+    end
+  end
 end

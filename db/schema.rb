@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130206114745) do
+ActiveRecord::Schema.define(:version => 20130207110836) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",       :null => false
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20130206114745) do
     t.integer  "rating",      :default => 0,     :null => false
     t.boolean  "is_reviewed", :default => false, :null => false
     t.string   "github_path"
+    t.text     "description"
   end
 
   add_index "projects", ["category_id"], :name => "index_projects_on_category_id"

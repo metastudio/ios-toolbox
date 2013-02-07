@@ -3,13 +3,14 @@ Category.destroy_all
   Category.create! name: category_name
 end
 
-[{category: 'Networking', name: 'ASIHTTPRequest', url: 'http://allseeing-i.com/ASIHTTPRequest/',       github_path: 'pokeb/asi-http-request'},
- {category: 'Networking', name: 'AFNetworking',   url: 'https://github.com/AFNetworking/AFNetworking', github_path: 'AFNetworking/AFNetworking'},
- {category: 'Networking', name: 'RestKit',        url: 'http://restkit.org/',                          github_path: 'RestKit/RestKit'}].each do |project_attributes|
+[
+ {category: 'Networking', name: 'ASIHTTPRequest', url: 'http://allseeing-i.com/ASIHTTPRequest/',       github_path: 'pokeb/asi-http-request',    description: "ASIHTTPRequest is an easy to use wrapper around the CFNetwork API that makes some of the more tedious aspects of communicating with web servers easier. It is written in Objective-C and works in both Mac OS X and iPhone applications."},
+ {category: 'Networking', name: 'AFNetworking',   url: 'https://github.com/AFNetworking/AFNetworking', github_path: 'AFNetworking/AFNetworking', description: "AFNetworking is a delightful networking library for iOS and Mac OS X. It's built on top of NSURLConnection, NSOperation, and other familiar Foundation technologies. It has a modular architecture with well-designed, feature-rich APIs that are a joy to use."},
+ {category: 'Networking', name: 'RestKit',        url: 'http://restkit.org/',                          github_path: 'RestKit/RestKit',           description: "RestKit is an Objective-C framework for iOS that aims to make interacting with RESTful web services simple, fast and fun. It combines a clean, simple HTTP request/response API with a powerful object mapping system that reduces the amount of code you need to write to get stuff done."}
+].each do |project_attributes|
   Project.create! do |p|
-    p.category    = Category.find_by_name! project_attributes[:category]
-    p.name        = project_attributes[:name]
-    p.url         = project_attributes[:url]
+    p.category    = Category.find_by_name! project_attributes.delete(:category)
+    p.attributes  = project_attributes
     p.is_reviewed = true
   end
 end

@@ -1,7 +1,7 @@
 class Project < ActiveRecord::Base
   belongs_to :category
 
-  attr_accessible :name, :url, :category_id, :github_path
+  attr_accessible :name, :description, :url, :category_id, :github_path
 
   validates :category_id, presence: true
   validates :name, presence: true
@@ -14,6 +14,10 @@ class Project < ActiveRecord::Base
   def update_rating
     self.rating = rating_provider.fetch
     save!
+  end
+
+  def github_url
+    "https://github.com/#{github_path}" if github_path.present?
   end
 
   private
