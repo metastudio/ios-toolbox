@@ -1,4 +1,9 @@
-- @categories.each do |category|
-  .category{id: dom_id(category)}
-    %h2= category.name
-    %ul.unstyled= render category.projects.published.by_rating
+#cat-tabs.tabbable.tabs-left
+  %ul.nav.nav-tabs
+    - @categories.each do |category|
+      %li= link_to category.name, "##{dom_id(category)}", 'data-toggle' => 'tab'
+  .tab-content
+    - @categories.each do |category|
+      .tab-pane.category{id: dom_id(category)}
+        %h2= category.name
+        %ul.unstyled= render category.projects.published.by_rating

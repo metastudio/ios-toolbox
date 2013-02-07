@@ -43,3 +43,12 @@ Feature: Dashboard
     And I should see "Nice project"
     And I should see "http://allseeing-i.com/ASIHTTPRequest/"
     And I should see "https://github.com/pokeb/asi-http-request"
+
+  Scenario: Only categories with projects are displayed
+    Given I have projects:
+      | Name            | Category   |
+      | ASIHTTPRequest  | Networking |
+    When I go to the dashboard page
+    Then I should see "Networking"
+    But I should not see "Graphics"
+    And I should not see "Social Networks"
