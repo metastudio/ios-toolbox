@@ -1,12 +1,16 @@
 = form_for @project, method: :post do |f|
-  
-  = f.label :category_id
-  = f.select :category_id, @categories_for_select
 
-  = f.label :name
-  = f.text_field :name
+  .control-group  
+    = f.label :category_id
+    = f.select :category_id, @categories_for_select
 
-  = f.label :url
-  = f.text_field :url
+  .control-group
+    = f.label :name
+    = f.text_field :name
 
-  = f.submit
+  .control-group
+    = f.label :url
+    = f.text_field :url
+
+  .control-group
+    = f.submit class: 'btn btn-primary'
