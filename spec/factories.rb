@@ -9,5 +9,13 @@ FactoryGirl.define do
     url "http://whatever.com"
     category
   end
-  
+
+  factory :tag do
+    sequence(:name) {|n| "Tag #{n}"}
+  end
+
+  factory :projects_tag do
+    tag
+    project
+  end
 end

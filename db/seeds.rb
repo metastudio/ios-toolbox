@@ -3,6 +3,7 @@ Category.destroy_all
   Category.create! name: category_name
 end
 
+Project.destroy_all
 [
  {category: 'Networking', name: 'ASIHTTPRequest', url: 'http://allseeing-i.com/ASIHTTPRequest/',       github_path: 'pokeb/asi-http-request',    description: "ASIHTTPRequest is an easy to use wrapper around the CFNetwork API that makes some of the more tedious aspects of communicating with web servers easier. It is written in Objective-C and works in both Mac OS X and iPhone applications."},
  {category: 'Networking', name: 'AFNetworking',   url: 'https://github.com/AFNetworking/AFNetworking', github_path: 'AFNetworking/AFNetworking', description: "AFNetworking is a delightful networking library for iOS and Mac OS X. It's built on top of NSURLConnection, NSOperation, and other familiar Foundation technologies. It has a modular architecture with well-designed, feature-rich APIs that are a joy to use."},
@@ -14,4 +15,22 @@ end
     p.attributes  = project_attributes
     p.is_reviewed = true
   end
+end
+
+Tag.destroy_all
+['Tag1', 'Tag2', 'Tag3'].each do |tag_name|
+  Tag.create! name: tag_name
+end
+
+ProjectsTag.destroy_all
+[
+ {project_name: 'ASIHTTPRequest', tag_name: 'Tag1'},
+ {project_name: 'ASIHTTPRequest', tag_name: 'Tag2'},
+ {project_name: 'RestKit',        tag_name: 'Tag3'},
+ {project_name: 'RestKit',        tag_name: 'Tag1'},
+].each do |projects_tags_attributes|
+  project = Project.find_by_name!(projects_tags_attributes[:project_name])
+  tag     = Tag.find_by_name!(projects_tags_attributes[:tag_name])
+
+  ProjectsTag.create! project_id: project.id, tag_id: tag.id
 end
