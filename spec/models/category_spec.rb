@@ -15,7 +15,7 @@ describe Category do
 
     subject { described_class.with_projects }
 
-    it { should     include category_with_projects }
-    it { should_not include category_without_projects }
+    it { should     include(category_with_projects), 'It should include category with projects' }
+    it { should_not include(category_without_projects), 'It should not include category with 0 projects' }
   end
 end
