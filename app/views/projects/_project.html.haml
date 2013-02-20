@@ -8,3 +8,7 @@
     - if project.github_url.present?
       %dt GitHub
       %dd= link_to project.github_url, project.github_url, target: '_blank'
+      %dt Tags
+      %dd
+        - project.tags.each do |tag|
+          = link_to tag.name, by_tag_projects_path(tag: tag.name)
