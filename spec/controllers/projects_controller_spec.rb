@@ -34,4 +34,30 @@ describe ProjectsController do
       response.should redirect_to root_path
     end
   end
+
+  describe '#by_tag' do
+    let(:tag_name) { 'networking' }
+    let!(:tag) { create :tag, name: tag_name }
+    
+    before { Tag.should_receive(:find_by_name!).with(tag_name).and_return tag }
+
+    describe '@tag' do
+      before { get :by_tag, tag: tag_name }
+
+      subject { assigns(:tag) }
+
+      it { should == tag }
+    end
+
+    describe '@projects', brittle: true do
+      let(:projects) { stub('Projects').as_null_object }
+
+      before { tag.stub projects: projects }
+      before { get :by_tag, tag: tag_name }
+
+      subject { assigns(:projects) }
+
+      it { should == projects }
+    end
+  end
 end
