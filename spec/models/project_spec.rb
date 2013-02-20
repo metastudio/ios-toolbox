@@ -24,7 +24,7 @@ describe Project do
 
     subject { described_class.by_rating }
 
-    it { should == [rating50, rating10, rating5] }
+    it { should eq([rating50, rating10, rating5]), 'It returns projects ordered by rating descending' }
   end
 
   describe '.in_review' do
@@ -33,8 +33,8 @@ describe Project do
 
     subject { described_class.in_review }
 
-    it { should     include unpublished }
-    it { should_not include published   }
+    it { should     include(unpublished), 'It should not include non-published project' }
+    it { should_not include(published), 'It should include published project' }
   end
 
   describe '.published' do
@@ -43,8 +43,8 @@ describe Project do
 
     subject { described_class.published }
 
-    it { should_not include unpublished }
-    it { should     include published   }
+    it { should_not include(unpublished), 'It should not include non-published project' }
+    it { should     include(published), 'It should include published project' }
   end
 
   describe '.github_url' do
