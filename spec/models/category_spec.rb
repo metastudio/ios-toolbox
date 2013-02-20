@@ -18,4 +18,14 @@ describe Category do
     it { should     include(category_with_projects), 'It should include category with projects' }
     it { should_not include(category_without_projects), 'It should not include category with 0 projects' }
   end
+
+  describe '.options_hash' do
+    let!(:networking) { create :category, name: 'Networking' }
+    let!(:graphics)   { create :category, name: 'Graphics' }
+
+    subject { described_class.options_hash }
+
+    it { should include ['Networking', networking.id] }
+    it { should include ['Graphics', graphics.id] }
+  end
 end
