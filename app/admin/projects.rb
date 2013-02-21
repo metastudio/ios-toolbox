@@ -5,6 +5,8 @@ ActiveAdmin.register Project do
       f.input :name
       f.input :url
       f.input :rating
+      f.input :is_reviewed
+      f.input :github_path
       f.input :description
       f.has_many :projects_tags do |projects_tag|
         projects_tag.input :tag, :collection => Tag.order(:name)
