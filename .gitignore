@@ -8,3 +8,5 @@ coverage/
 .DS_Store
 public/assets/
 config/database.yml
+ios-toolbox.sublime-project
+ios-toolbox.sublime-workspace

@@ -32,3 +32,5 @@ end
 gem 'jquery-rails'
 
 gem 'thin'
+
+gem 'activeadmin'
