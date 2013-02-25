@@ -10,8 +10,6 @@ http://ios-toolbox.herokuapp.com/
 
 Run
 
-```
-rake db:create
-rake db:migrate
-rake db:seed
+```sh
+$ rake db:setup
 ```
