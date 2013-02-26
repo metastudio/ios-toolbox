@@ -3,7 +3,7 @@ class Project < ActiveRecord::Base
   has_many :projects_tags, :dependent => :destroy
   has_many :tags, :through => :projects_tags
 
-  attr_accessible :name, :description, :url, :category_id, :github_path
+  attr_accessible :name, :description, :url, :category_id, :github_path, :has_cocoapod
 
   validates :category_id, presence: true
   validates :name, presence: true
