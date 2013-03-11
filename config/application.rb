@@ -63,7 +63,7 @@ module IosToolbox
     config.assets.enabled = true
 
     # Version of your assets, change this if you want to expire all your assets
-    config.assets.precompile += %w( active_admin.css )
+    config.assets.precompile += %w( active_admin.js active_admin.css active_admin/print.css )
     config.assets.version = '1.0'
     config.assets.initialize_on_precompile = false
   end
