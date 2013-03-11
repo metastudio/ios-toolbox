@@ -5,6 +5,7 @@ gem 'rails', '3.2.12'
 gem 'pg'
 
 gem 'github_api'
+gem 'activeadmin'
 
 gem 'haml-rails'
 gem 'twitter-bootstrap-rails'
