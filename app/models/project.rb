@@ -3,15 +3,16 @@ class Project < ActiveRecord::Base
   has_many :projects_tags, :dependent => :destroy
   has_many :tags, :through => :projects_tags
 
-  attr_accessible :name, :description, :url, :category_id, :github_path, :has_cocoapod
+  attr_protected :rating, :is_published
+  attr_protected :rating, as: :admin
 
   validates :category_id, presence: true
   validates :name, presence: true
   validates :github_path, github_path: true
 
   scope :by_rating, order('rating desc')
-  scope :in_review, where('is_reviewed = ?', false)
-  scope :published, where('is_reviewed = ?', true)
+  scope :in_review, where('is_published = ?', false)
+  scope :published, where('is_published = ?', true)
 
   def update_rating
     self.rating = rating_provider.fetch

@@ -12,7 +12,7 @@ describe Project do
   it { should     allow_mass_assignment_of(:url) }
   it { should     allow_mass_assignment_of(:category_id) }
   it { should_not allow_mass_assignment_of(:rating) }
-  it { should_not allow_mass_assignment_of(:is_reviewed) }
+  it { should_not allow_mass_assignment_of(:is_published) }
 
   it { should     allow_value('AndreyChernyh/rails').for(:github_path) }
   it { should_not allow_value('http://whatever.com/Andrey/rails').for(:github_path) }
@@ -28,8 +28,8 @@ describe Project do
   end
 
   describe '.in_review' do
-    let(:published)   { create :project, is_reviewed: true }
-    let(:unpublished) { create :project, is_reviewed: false }
+    let(:published)   { create :project, is_published: true }
+    let(:unpublished) { create :project, is_published: false }
 
     subject { described_class.in_review }
 
@@ -38,8 +38,8 @@ describe Project do
   end
 
   describe '.published' do
-    let(:published)   { create :project, is_reviewed: true }
-    let(:unpublished) { create :project, is_reviewed: false }
+    let(:published)   { create :project, is_published: true }
+    let(:unpublished) { create :project, is_published: false }
 
     subject { described_class.published }
 

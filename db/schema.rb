@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130311110328) do
+ActiveRecord::Schema.define(:version => 20130311123117) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(:version => 20130311110328) do
     t.datetime "updated_at",                         :null => false
     t.string   "url",                                :null => false
     t.integer  "rating",          :default => 0,     :null => false
-    t.boolean  "is_reviewed",     :default => false, :null => false
+    t.boolean  "is_published",    :default => false, :null => false
     t.string   "github_path"
     t.text     "description"
     t.boolean  "has_cocoapod",    :default => false, :null => false

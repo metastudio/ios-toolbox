@@ -13,7 +13,7 @@ Project.destroy_all
   Project.create! do |p|
     p.category    = Category.find_by_name! project_attributes.delete(:category)
     p.attributes  = project_attributes
-    p.is_reviewed = true
+    p.is_published = true
   end
 end
 
