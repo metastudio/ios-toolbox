@@ -6,6 +6,7 @@ gem 'pg'
 
 gem 'github_api'
 gem 'activeadmin'
+gem 'high_voltage'
 
 gem 'haml-rails'
 gem 'twitter-bootstrap-rails'
