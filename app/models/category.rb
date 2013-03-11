@@ -16,6 +16,10 @@ class Category < ActiveRecord::Base
   }
 
   def self.options_hash
-    all.collect {|c| [c.name, c.id]}
+    cats = roots.map do |parent|
+      [[parent.name, parent.id]] + 
+        parent.descendants.map {|child| ["#{parent.name}/#{child.name}", child.id]}
+    end
+    cats.flatten(1)
   end
 end

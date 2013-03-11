@@ -17,7 +17,7 @@ ActiveAdmin.register Project do
 
   form do |f|
     f.inputs 'Main' do
-      f.input :category
+      f.input :category, collection: Category.options_hash
       f.input :name
       f.input :url
       f.input :description

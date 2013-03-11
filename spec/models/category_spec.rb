@@ -22,10 +22,16 @@ describe Category do
   describe '.options_hash' do
     let!(:networking) { create :category, name: 'Networking' }
     let!(:graphics)   { create :category, name: 'Graphics' }
+    let!(:controls)   { create :category, name: 'Controls' }
+    let!(:activity_indicators) { create :category, name: 'Activity Indicators' }
+
+    before { activity_indicators.move_to_child_of(controls) }
 
     subject { described_class.options_hash }
 
     it { should include ['Networking', networking.id] }
     it { should include ['Graphics', graphics.id] }
+    it { should include ['Controls', controls.id] }
+    it { should include ['Controls/Activity Indicators', activity_indicators.id] }
   end
 end
