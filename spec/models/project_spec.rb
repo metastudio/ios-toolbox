@@ -47,7 +47,7 @@ describe Project do
     it { should     include(published), 'It should include published project' }
   end
 
-  describe '.github_url' do
+  describe '#github_url' do
     let(:project) { stub_model Project, github_path: github_path }
     subject { project.github_url }
 
@@ -58,6 +58,31 @@ describe Project do
 
     context 'without github_path' do
       let(:github_path) { nil }
+      it { should be_nil }
+    end
+  end
+
+  describe '#source_code_url' do
+    let(:project) { stub_model Project }
+
+    before do
+      project.github_path = nil
+      project.source_code_url = nil
+    end
+
+    subject { project.source_code_url }
+
+    context 'with github_url' do
+      before { project.stub github_url: 'http://github.com/AndreyChernyh/rails' }
+      it { should == 'http://github.com/AndreyChernyh/rails' }
+    end
+
+    context 'with source_code_url' do
+      before { project.source_code_url = 'http://sourceforge.org/whatever' }
+      it { should == 'http://sourceforge.org/whatever' }
+    end
+
+    context 'without both' do
       it { should be_nil }
     end
   end

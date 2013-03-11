@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130226074027) do
+ActiveRecord::Schema.define(:version => 20130311103225) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",       :null => false
@@ -22,16 +22,17 @@ ActiveRecord::Schema.define(:version => 20130226074027) do
   add_index "categories", ["name"], :name => "index_categories_on_name", :unique => true
 
   create_table "projects", :force => true do |t|
-    t.integer  "category_id",                     :null => false
-    t.string   "name",                            :null => false
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
-    t.string   "url",                             :null => false
-    t.integer  "rating",       :default => 0,     :null => false
-    t.boolean  "is_reviewed",  :default => false, :null => false
+    t.integer  "category_id",                        :null => false
+    t.string   "name",                               :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+    t.string   "url",                                :null => false
+    t.integer  "rating",          :default => 0,     :null => false
+    t.boolean  "is_reviewed",     :default => false, :null => false
     t.string   "github_path"
     t.text     "description"
-    t.boolean  "has_cocoapod", :default => false, :null => false
+    t.boolean  "has_cocoapod",    :default => false, :null => false
+    t.string   "source_code_url"
   end
 
   add_index "projects", ["category_id"], :name => "index_projects_on_category_id"
