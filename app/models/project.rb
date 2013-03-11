@@ -18,6 +18,10 @@ class Project < ActiveRecord::Base
     save!
   end
 
+  def source_code_url
+    github_url || super
+  end
+
   def github_url
     "https://github.com/#{github_path}" if github_path.present?
   end
