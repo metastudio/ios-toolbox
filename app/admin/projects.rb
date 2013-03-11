@@ -1,4 +1,10 @@
 ActiveAdmin.register Project do
+  index do
+    column :name
+    column :is_published
+    default_actions
+  end
+
   controller do 
     def role_given?
       true
