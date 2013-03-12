@@ -1,0 +1,23 @@
+- if project.url.present?
+  %dt URL
+  %dd= link_to project.url, project.url, target: '_blank'
+
+- if project.source_code_url.present?
+  %dt Source
+  %dd= link_to project.source_code_url, project.source_code_url, target: '_blank'
+
+- if project.tags.present?
+  %dt Tags
+  %dd
+    - project.tags.each do |tag|
+      = link_to tag.name, by_tag_projects_path(tag: tag.name)
+
+- if project.has_cocoapod?
+  %dt Has Cocoapod
+  %dd "Yes"
+
+- if project.apps.any?
+  %dt Used in
+  %dd
+    - project.apps.each do |app|
+      = link_to app.name, app.url

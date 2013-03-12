@@ -12,4 +12,4 @@
             %h2= category.name
           - else
             %h3= category.name
-          %ul.unstyled= render category.projects.published.by_rating
+          %ul.unstyled= render partial: 'projects/summary', collection: category.projects.published.by_rating, as: :project

@@ -1,1 +1,3 @@
-= render 'projects/project', project: @project
+%h1= @project.name
+%p= simple_format @project.description
+= render 'projects/params', project: @project

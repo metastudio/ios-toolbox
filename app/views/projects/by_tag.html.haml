@@ -1,4 +1,2 @@
 %h1 Projects tagged #{@tag.name}
-%ul.unstyled    
-  - @projects.each do |project|
-    = render project
+%ul.unstyled= render partial: 'projects/summary', collection: @projects, as: :project

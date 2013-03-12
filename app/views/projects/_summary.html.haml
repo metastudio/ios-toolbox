@@ -1,0 +1,8 @@
+%li.project{id: dom_id(project)}
+  %h4= link_to project.name, project_path(project)
+  .row-fluid
+    .span6
+      %p= truncate project.description, length: 300, separator: ' '
+    .span6
+      %dl.dl-horizontal
+        = render 'projects/params', project: project
