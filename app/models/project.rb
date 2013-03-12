@@ -2,6 +2,8 @@ class Project < ActiveRecord::Base
   belongs_to :category
   has_many :projects_tags, :dependent => :destroy
   has_many :tags, :through => :projects_tags
+  has_many :projects_apps, dependent: :destroy
+  has_many :apps, through: :projects_apps
 
   attr_protected :rating, :is_published
   attr_protected :rating, as: :admin

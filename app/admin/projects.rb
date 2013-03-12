@@ -32,6 +32,10 @@ ActiveAdmin.register Project do
       f.input :is_published
     end
 
+    f.inputs 'Apps' do
+      f.input :apps, as: :check_boxes
+    end
+
     f.buttons
   end
 end

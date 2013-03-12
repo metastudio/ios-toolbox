@@ -4,6 +4,8 @@ describe Project do
   it { should belong_to(:category) }
   it { should have_many(:projects_tags).dependent(:destroy) }
   it { should have_many(:tags).through(:projects_tags) }
+  it { should have_many(:projects_apps).dependent(:destroy) }
+  it { should have_many(:apps).through(:projects_apps) }
 
   it { should validate_presence_of(:category_id) }
   it { should validate_presence_of(:name) }

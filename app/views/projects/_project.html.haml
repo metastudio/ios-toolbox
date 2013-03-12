@@ -17,3 +17,8 @@
     - if project.has_cocoapod?
       %dt Has Cocoapod
       %dd "Yes"
+    - if project.apps.any?
+      %dt Used in
+      %dd
+        - project.apps.each do |app|
+          = link_to app.name, app.url
