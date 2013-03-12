@@ -1,4 +1,3 @@
-@wip
 Feature: Project tagging
   Being administrator/moderator I would like to assign some tags to 
   the projects which I am adding/reviewing.
@@ -7,6 +6,9 @@ Feature: Project tagging
   with project and to filter projects by clicking on some tag.
 
   Background:
+    Given I have categories:
+      | Networking      |
+      | Graphics        |
     Given I have projects:
       | Name            | Category   |
       | ASIHTTPRequest  | Networking |
@@ -25,6 +27,7 @@ Feature: Project tagging
     Given the following projects tagged with "networking":
       | ASIHTTPRequest |
       | RestKit       |
-    When I click on the "networking" tag
+    When I go to the "ASIHTTPRequest" project page
+    And I click on "networking" tag
     Then I should see "ASIHTTPRequest"
     And I should see "RestKit"

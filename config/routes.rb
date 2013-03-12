@@ -3,7 +3,7 @@ IosToolbox::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  resources :projects, only: [:new, :create] do
+  resources :projects, only: [:new, :create, :show] do
     collection do
       get 'by_tag'
     end

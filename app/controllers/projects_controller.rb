@@ -13,4 +13,8 @@ class ProjectsController < ApplicationController
     @tag = Tag.find_by_name! params[:tag].to_s
     @projects = @tag.projects.by_rating
   end
+
+  def show
+    @project = Project.find params[:id]
+  end
 end
