@@ -6,7 +6,7 @@ describe DashboardController do
       let(:categories_with_projects) { stub('Categories with projects').as_null_object }
 
       it 'assigns categories' do
-        Category.stub with_projects: categories_with_projects
+        Category.stub roots: categories_with_projects
         get :show
         assigns(:categories).should == categories_with_projects
       end
