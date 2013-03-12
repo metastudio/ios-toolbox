@@ -8,5 +8,8 @@
     - @categories.each do |sub_category|
       .tab-pane.category{id: dom_id(sub_category)}
         - sub_category.self_and_descendants.each do |category|
-          %h2= category.name
+          - if category.root?
+            %h2= category.name
+          - else
+            %h3= category.name
           %ul.unstyled= render category.projects.published.by_rating
